@@ -1,6 +1,6 @@
 require "spec_helper"
 
-module CodingPh
+module VehicleCodingPh
   RSpec.describe Checker do
 
     describe ".call" do

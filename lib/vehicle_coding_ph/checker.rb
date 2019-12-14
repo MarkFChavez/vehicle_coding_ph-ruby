@@ -1,4 +1,4 @@
-module CodingPh
+module VehicleCodingPh
   class Checker
 
     PLATE_TO_DAY_MAPPING = {

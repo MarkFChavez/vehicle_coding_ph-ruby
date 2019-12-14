@@ -1,6 +1,6 @@
-# CodingPh
+# VehicleCodingPh
 
-[![Build Status](https://travis-ci.org/MarkFChavez/coding_ph-ruby.svg?branch=master)](https://travis-ci.org/MarkFChavez/coding_ph-ruby)
+[![Build Status](https://travis-ci.org/MarkFChavez/coding_ph-ruby.svg?branch=master)](https://travis-ci.org/MarkFChavez/vehicle_coding_ph-ruby)
 
 Helps you figure out if your car is legally okay to drive on a given date in the Philippines.
 
@@ -9,7 +9,7 @@ Helps you figure out if your car is legally okay to drive on a given date in the
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'coding_ph'
+gem 'vehicle_coding_ph'
 ```
 
 And then execute:
@@ -18,13 +18,13 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install coding_ph
+    $ gem install vehicle_coding_ph
 
 ## Usage
 
 ```ruby
 # Returns true if allowed to drive today; otherwise it's false
-CodingPh::Checker.(plate_number_of_your_vehicle)
+VehicleCodingPh::Checker.(plate_number_of_your_vehicle)
 ```
 
 ## Development
@@ -43,4 +43,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the CodingPh project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/coding_ph/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the CodingPh project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/vehicle_coding_ph/blob/master/CODE_OF_CONDUCT.md).

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    coding_ph (0.1.0)
+    vehicle_coding_ph (0.1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -33,11 +33,11 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 2.0)
-  coding_ph!
   pry
   rake (~> 10.0)
   rspec (~> 3.0)
   timecop
+  vehicle_coding_ph!
 
 BUNDLED WITH
    2.0.2

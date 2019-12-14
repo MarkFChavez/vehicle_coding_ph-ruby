@@ -1,10 +1,10 @@
 lib = File.expand_path("lib", __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "coding_ph/version"
+require "vehicle_coding_ph/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "coding_ph"
-  spec.version       = CodingPh::VERSION
+  spec.name          = "vehicle_coding_ph"
+  spec.version       = VehicleCodingPh::VERSION
   spec.authors       = ["Mark Chavez"]
   spec.email         = ["markchav3z@gmail.com"]
 
@@ -16,8 +16,8 @@ Gem::Specification.new do |spec|
   spec.metadata["allowed_push_host"] = "https://rubygems.org"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://github.com/MarkFChavez/coding_ph-ruby"
-  spec.metadata["changelog_uri"] = "https://github.com/MarkFChavez/coding_ph-ruby"
+  spec.metadata["source_code_uri"] = "https://github.com/MarkFChavez/vehicle_coding_ph-ruby"
+  spec.metadata["changelog_uri"] = "https://github.com/MarkFChavez/vehicle_coding_ph-ruby"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
