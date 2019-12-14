@@ -1,6 +1,6 @@
 # VehicleCodingPh
 
-[![Build Status](https://travis-ci.org/MarkFChavez/coding_ph-ruby.svg?branch=master)](https://travis-ci.org/MarkFChavez/vehicle_coding_ph-ruby)
+[![Build Status](https://travis-ci.org/MarkFChavez/vehicle_coding_ph-ruby.svg?branch=master)](https://travis-ci.org/MarkFChavez/vehicle_coding_ph-ruby)
 
 Helps you figure out if your car is legally okay to drive on a given date in the Philippines.
 
