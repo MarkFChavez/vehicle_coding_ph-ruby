@@ -15,10 +15,10 @@ module VehicleCodingPh
       end
 
       context "given that today is Tuesday" do
-        before { Timecop.freeze("Dec 17, 2019") }
+        let(:tuesday) { Date.parse("Dec 17, 2019") }
 
         it "is allowed to drive" do
-          expect(described_class.(plate)).to eq true
+          expect(described_class.(plate, tuesday)).to eq true
         end
       end
 
