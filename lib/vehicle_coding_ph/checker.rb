@@ -28,7 +28,7 @@ module VehicleCodingPh
     def self.allowed_anywhere
       {
         coding: false,
-        areas_allowed: [:anywhere],
+        allowed_areas: [:anywhere],
       }
     end
     private_class_method :allowed_anywhere

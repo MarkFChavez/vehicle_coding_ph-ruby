@@ -33,7 +33,7 @@ module VehicleCodingPh
 
           expected = {
             coding: false,
-            areas_allowed: [:anywhere],
+            allowed_areas: [:anywhere],
           }
 
           expect(result).to eq expected
@@ -72,7 +72,7 @@ module VehicleCodingPh
 
           expected = {
             coding: false,
-            areas_allowed: [:anywhere],
+            allowed_areas: [:anywhere],
           }
 
           expect(result).to eq expected
@@ -87,7 +87,7 @@ module VehicleCodingPh
 
           expected = {
             coding: false,
-            areas_allowed: [:anywhere],
+            allowed_areas: [:anywhere],
           }
 
           expect(result).to eq expected
