@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    vehicle_coding_ph (1.0.0)
+    vehicle_coding_ph (1.1.0)
 
 GEM
   remote: https://rubygems.org/
