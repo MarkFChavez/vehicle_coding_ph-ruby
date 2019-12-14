@@ -1,8 +1,6 @@
 # CodingPh
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/coding_ph`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Helps you figure out if your car is legally okay to drive on a given date in the Philippines.
 
 ## Installation
 
