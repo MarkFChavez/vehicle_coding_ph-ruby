@@ -4,6 +4,13 @@
 
 Helps you figure out if your car is legally okay to drive on a given date in the Philippines.
 
+## Version 1.0 roadmap
+
+- [ ] Response object
+- [ ] Consider window hours
+- [ ] Helpful return messages for the Gem users e.g. "areas you're allowed or
+  not allowed to go to" because areas have particular coding scheme applied
+
 ## Installation
 
 Add this line to your application's Gemfile:
