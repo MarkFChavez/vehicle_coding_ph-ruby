@@ -1,5 +1,7 @@
 # CodingPh
 
+[![Build Status](https://travis-ci.org/MarkFChavez/coding_ph-ruby.svg?branch=master)](https://travis-ci.org/MarkFChavez/coding_ph-ruby)
+
 Helps you figure out if your car is legally okay to drive on a given date in the Philippines.
 
 ## Installation
