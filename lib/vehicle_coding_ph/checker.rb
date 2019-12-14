@@ -1,22 +1,35 @@
 module VehicleCodingPh
   class Checker
 
-    def self.call(plate_no, date = Date.today)
-      return allowed_anywhere if weekend?(date)
-      return allowed_anywhere if not coding?(plate_no, date)
+    def self.call(plate_no, datetime = Time.now)
+      return allowed_anywhere if weekend?(datetime)
+      return allowed_anywhere if not coding?(plate_no, datetime)
 
-      VehicleCodingPh::AREA_TO_HOUR_MAPPING.reduce({}) do |area, coding_hours|
+      hour_of_the_day = datetime.hour
+
+      allowed_areas = VehicleCodingPh::AREA_TO_HOUR_MAPPING.reduce([]) do |hash, mapping|
+        hash ||= []
+        area = mapping[0]
+        coding_hours = mapping[1]
+
+        if coding_hours.empty? || !coding_hours.include?(hour_of_the_day)
+          hash << area
+        end
+
+        hash
       end
+
+      { coding: true, allowed_areas: allowed_areas }
     end
 
-    def self.weekend?(date)
-      date.saturday? || date.sunday?
+    def self.weekend?(datetime)
+      datetime.saturday? || datetime.sunday?
     end
     private_class_method :weekend?
 
-    def self.coding?(plate, date)
+    def self.coding?(plate, datetime)
       last_digit = plate[-1]
-      day_today = Date::DAYNAMES[date.cwday]
+      day_today = Date::DAYNAMES[datetime.wday]
 
       mapping = VehicleCodingPh::PLATE_TO_DAY_MAPPING.
         select { |day, digits| day == day_today }

@@ -30,11 +30,16 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
-# Returns true if allowed to drive today; otherwise it's false
-VehicleCodingPh::Checker.(
+result = VehicleCodingPh::Checker.(
   plate_number_of_your_vehicle, 
-  date # if not passed, defaults to date today
+  datetime # if not passed, defaults to datetime today
 )
+
+# result is a hash that has the ff. data structure
+{
+  coding: boolean,
+  allowed_areas: [] # array of areas in Metro Manila
+}
 ```
 
 ## Development
