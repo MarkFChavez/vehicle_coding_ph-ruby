@@ -1,7 +1,7 @@
 require "spec_helper"
 
 module CodingPh
-  RSpec.describe Runner do
+  RSpec.describe Checker do
 
     describe ".call" do
       let(:plate) { "ABC321" }

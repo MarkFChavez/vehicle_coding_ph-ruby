@@ -21,7 +21,8 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
-CodingPh::Runner.(plate_number_of_your_vehicle)
+# Returns true if allowed to drive today; otherwise it's false
+CodingPh::Checker.(plate_number_of_your_vehicle)
 ```
 
 ## Development

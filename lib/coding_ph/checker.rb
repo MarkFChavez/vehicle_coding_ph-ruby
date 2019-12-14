@@ -1,5 +1,5 @@
 module CodingPh
-  class Runner
+  class Checker
 
     PLATE_TO_DAY_MAPPING = {
       "Monday"    => ["1", "2"],
