@@ -20,7 +20,9 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+CodingPh::Runner.(plate_number_of_your_vehicle)
+```
 
 ## Development
 
