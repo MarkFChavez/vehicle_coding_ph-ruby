@@ -7,16 +7,17 @@ module VehicleCodingPh
 
       hour_of_the_day = datetime.hour
 
-      allowed_areas = VehicleCodingPh::AREA_TO_HOUR_MAPPING.reduce([]) do |hash, mapping|
-        hash ||= []
-        area = mapping[0]
+      allowed_areas = VehicleCodingPh::AREA_TO_HOUR_MAPPING.reduce([]) do |areas, mapping|
+        areas ||= []
+
+        name_of_area = mapping[0]
         coding_hours = mapping[1]
 
         if coding_hours.empty? || !coding_hours.include?(hour_of_the_day)
-          hash << area
+          areas << name_of_area
         end
 
-        hash
+        areas
       end
 
       Response.new(true, allowed_areas)
