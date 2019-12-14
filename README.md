@@ -24,7 +24,10 @@ Or install it yourself as:
 
 ```ruby
 # Returns true if allowed to drive today; otherwise it's false
-VehicleCodingPh::Checker.(plate_number_of_your_vehicle)
+VehicleCodingPh::Checker.(
+  plate_number_of_your_vehicle, 
+  date # if not passed, defaults to date today
+)
 ```
 
 ## Development

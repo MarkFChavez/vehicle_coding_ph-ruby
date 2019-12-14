@@ -1,18 +1,16 @@
 module VehicleCodingPh
   class Checker
 
-    def self.call(plate_no)
-      today = Date.today
-
-      return true if weekend?(today)
+    def self.call(plate_no, date = Date.today)
+      return true if weekend?(date)
 
       last_digit = plate_no[-1]
-      today = Date::DAYNAMES[today.cwday]
+      day_today = Date::DAYNAMES[date.cwday]
 
       mapping = VehicleCodingPh::PLATE_TO_DAY_MAPPING.
-        select { |day, _| day == today }
+        select { |day, digits| day == day_today }
 
-      !mapping[today].include?(last_digit) 
+      !mapping[day_today].include?(last_digit) 
     end
 
     def self.weekend?(date)
