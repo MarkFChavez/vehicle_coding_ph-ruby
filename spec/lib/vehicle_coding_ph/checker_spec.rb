@@ -10,18 +10,18 @@ module VehicleCodingPh
         before { Timecop.freeze("Dec 16, 2019 10:00:00") }
 
         it "is not allowed to drive" do
-          expected = {
-            coding: true,
-            allowed_areas: [
-              "Marikina",
-              "Muntinlupa",
-              "Taguig",
-              "Pasig",
-              "Paranaque",
-            ]
-          }
+          expected_areas = [
+            "Marikina",
+            "Muntinlupa",
+            "Taguig",
+            "Pasig",
+            "Paranaque",
+          ]
 
-          expect(described_class.(plate)).to eq expected
+          response = described_class.(plate)
+
+          expect(response.coding).to eq true
+          expect(response.allowed_areas).to eq expected_areas
         end
       end
 
@@ -29,14 +29,10 @@ module VehicleCodingPh
         let(:tuesday) { Date.parse("Dec 17, 2019") }
 
         it "is allowed to drive" do
-          result = described_class.(plate, tuesday) 
+          response = described_class.(plate, tuesday) 
 
-          expected = {
-            coding: false,
-            allowed_areas: [:anywhere],
-          }
-
-          expect(result).to eq expected
+          expect(response.coding).to eq false
+          expect(response.allowed_areas).to eq [:anywhere]
         end
       end
 
@@ -44,14 +40,10 @@ module VehicleCodingPh
         before { Timecop.freeze("Dec 18, 2019") }
 
         it "is allowed to drive" do
-          result = described_class.(plate) 
+          response = described_class.(plate) 
 
-          expected = {
-            coding: false,
-            allowed_areas: [:anywhere],
-          }
-
-          expect(result).to eq expected
+          expect(response.coding).to eq false
+          expect(response.allowed_areas).to eq [:anywhere]
         end
       end
 
@@ -59,14 +51,10 @@ module VehicleCodingPh
         before { Timecop.freeze("Dec 19, 2019") }
 
         it "is allowed to drive" do
-          result = described_class.(plate) 
+          response = described_class.(plate) 
 
-          expected = {
-            coding: false,
-            allowed_areas: [:anywhere],
-          }
-
-          expect(result).to eq expected
+          expect(response.coding).to eq false
+          expect(response.allowed_areas).to eq [:anywhere]
         end
       end
 
@@ -74,14 +62,10 @@ module VehicleCodingPh
         before { Timecop.freeze("Dec 20, 2019") }
 
         it "is allowed to drive" do
-          result = described_class.(plate) 
+          response = described_class.(plate) 
 
-          expected = {
-            coding: false,
-            allowed_areas: [:anywhere],
-          }
-
-          expect(result).to eq expected
+          expect(response.coding).to eq false
+          expect(response.allowed_areas).to eq [:anywhere]
         end
       end
 
@@ -89,14 +73,10 @@ module VehicleCodingPh
         before { Timecop.freeze("Dec 21, 2019") }
 
         it "is allowed to drive" do
-          result = described_class.(plate) 
+          response = described_class.(plate) 
 
-          expected = {
-            coding: false,
-            allowed_areas: [:anywhere],
-          }
-
-          expect(result).to eq expected
+          expect(response.coding).to eq false
+          expect(response.allowed_areas).to eq [:anywhere]
         end
       end
 
@@ -104,14 +84,10 @@ module VehicleCodingPh
         before { Timecop.freeze("Dec 22, 2019") }
 
         it "is allowed to drive" do
-          result = described_class.(plate) 
+          response = described_class.(plate) 
 
-          expected = {
-            coding: false,
-            allowed_areas: [:anywhere],
-          }
-
-          expect(result).to eq expected
+          expect(response.coding).to eq false
+          expect(response.allowed_areas).to eq [:anywhere]
         end
       end
     end

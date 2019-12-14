@@ -1,6 +1,7 @@
 require "date"
 require "vehicle_coding_ph/version"
 require "vehicle_coding_ph/checker"
+require "vehicle_coding_ph/response"
 
 module VehicleCodingPh
   class Error < StandardError; end

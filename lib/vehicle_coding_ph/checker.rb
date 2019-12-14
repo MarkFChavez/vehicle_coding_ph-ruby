@@ -19,7 +19,7 @@ module VehicleCodingPh
         hash
       end
 
-      { coding: true, allowed_areas: allowed_areas }
+      Response.new(true, allowed_areas)
     end
 
     def self.weekend?(datetime)
@@ -39,10 +39,7 @@ module VehicleCodingPh
     private_class_method :coding?
 
     def self.allowed_anywhere
-      {
-        coding: false,
-        allowed_areas: [:anywhere],
-      }
+      Response.new(false, [:anywhere])
     end
     private_class_method :allowed_anywhere
 
