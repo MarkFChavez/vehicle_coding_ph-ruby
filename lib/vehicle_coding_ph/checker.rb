@@ -2,16 +2,17 @@ module VehicleCodingPh
   class Checker
 
     def self.call(plate_no, date = Date.today)
+      return allowed_anywhere if weekend?(date)
       return allowed_anywhere if not coding?(plate_no, date)
 
       VehicleCodingPh::AREA_TO_HOUR_MAPPING.reduce({}) do |area, coding_hours|
       end
     end
 
-    # def self.weekend?(date)
-    #   date.saturday? || date.sunday?
-    # end
-    # private_class_method :weekend?
+    def self.weekend?(date)
+      date.saturday? || date.sunday?
+    end
+    private_class_method :weekend?
 
     def self.coding?(plate, date)
       last_digit = plate[-1]

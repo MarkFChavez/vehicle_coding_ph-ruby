@@ -64,21 +64,35 @@ module VehicleCodingPh
       #   end
       # end
       #
-      # context "given that today is Saturday" do
-      #   before { Timecop.freeze("Dec 21, 2019") }
-      #
-      #   it "is allowed to drive" do
-      #     expect(described_class.(plate)).to eq true
-      #   end
-      # end
-      #
-      # context "given that today is Sunday" do
-      #   before { Timecop.freeze("Dec 22, 2019") }
-      #
-      #   it "is allowed to drive" do
-      #     expect(described_class.(plate)).to eq true
-      #   end
-      # end
+      context "given that today is Saturday" do
+        before { Timecop.freeze("Dec 21, 2019") }
+
+        it "is allowed to drive" do
+          result = described_class.(plate) 
+
+          expected = {
+            coding: false,
+            areas_allowed: [:anywhere],
+          }
+
+          expect(result).to eq expected
+        end
+      end
+
+      context "given that today is Sunday" do
+        before { Timecop.freeze("Dec 22, 2019") }
+
+        it "is allowed to drive" do
+          result = described_class.(plate) 
+
+          expected = {
+            coding: false,
+            areas_allowed: [:anywhere],
+          }
+
+          expect(result).to eq expected
+        end
+      end
     end
 
   end
