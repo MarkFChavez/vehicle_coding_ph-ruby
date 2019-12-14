@@ -7,7 +7,7 @@ Helps you figure out if your car is legally okay to drive on a given date in the
 ## Version 1.0 roadmap
 
 - [x] Response object
-- [ ] Consider window hours
+- [x] Consider window hours
 - [ ] Helpful return messages for the Gem users e.g. "areas you're allowed or
   not allowed to go to" because areas have particular coding scheme applied
 
