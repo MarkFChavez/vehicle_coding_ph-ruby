@@ -8,8 +8,6 @@ Helps you figure out if your car is legally okay to drive on a given date in the
 
 - [x] Response object
 - [x] Consider window hours
-- [ ] Helpful return messages for the Gem users e.g. "areas you're allowed or
-  not allowed to go to" because areas have particular coding scheme applied
 
 ## Installation
 
@@ -30,16 +28,11 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
-result = VehicleCodingPh::Checker.(
+# returns a `VehicleCodingPh::Response` object
+VehicleCodingPh::Checker.(
   plate_number_of_your_vehicle, 
   datetime # if not passed, defaults to datetime today
 )
-
-# result is a hash that has the ff. data structure
-{
-  coding: boolean,
-  allowed_areas: [] # array of areas in Metro Manila
-}
 ```
 
 ## Development
