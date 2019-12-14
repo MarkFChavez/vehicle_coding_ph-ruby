@@ -1,3 +1,4 @@
+require "date"
 require "coding_ph/version"
 require "coding_ph/checker"
 
