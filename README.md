@@ -4,11 +4,6 @@
 
 Helps you figure out if your car is legally okay to drive on a given date in the Philippines.
 
-## Version 1.0 roadmap
-
-- [x] Response object
-- [x] Consider window hours
-
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -33,6 +28,11 @@ VehicleCodingPh::Checker.(
   plate_number_of_your_vehicle, 
   datetime # if not passed, defaults to datetime today
 )
+
+# VehicleCodingPh::Response object returns:
+- coding: boolean
+- allowed: array of areas allowed to go
+- not_allowed: array of areas not allowed to go
 ```
 
 ## Development
