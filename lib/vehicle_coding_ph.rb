@@ -1,4 +1,5 @@
 require "date"
+require "active_support/core_ext/hash/indifferent_access"
 require "vehicle_coding_ph/version"
 require "vehicle_coding_ph/checker"
 require "vehicle_coding_ph/response"
