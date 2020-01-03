@@ -9,7 +9,7 @@ module VehicleCodingPh
   class Error < StandardError; end
 
   def self.coding_scheme
-    file = ["config", "coding_scheme.yml"].join("/")
+    file = File.join(File.dirname(__FILE__), "sources", "coding_scheme.yml")
     YAML.load_file(file).map(&:with_indifferent_access)
   end
 
