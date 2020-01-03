@@ -5,22 +5,19 @@ module VehicleCodingPh
       return allowed_anywhere if weekend?(datetime)
       return allowed_anywhere if not coding?(plate_no, datetime)
 
-      hour_of_the_day = datetime.hour
+      allowed_areas     = []
+      not_allowed_areas = []
+      hour_of_the_day   = datetime.hour
 
-      allowed_areas = VehicleCodingPh::AREA_TO_HOUR_MAPPING.reduce([]) do |areas, mapping|
-        areas ||= []
-
-        name_of_area = mapping[0]
-        coding_hours = mapping[1]
-
-        if coding_hours.empty? || !coding_hours.include?(hour_of_the_day)
-          areas << name_of_area
+      VehicleCodingPh::AREA_TO_HOUR_MAPPING.each do |area, hours|
+        if hours.empty? || !hours.include?(hour_of_the_day)
+          allowed_areas << area
+        else
+          not_allowed_areas << area
         end
-
-        areas
       end
 
-      Response.new(true, allowed_areas)
+      Response.new(true, allowed_areas, not_allowed_areas)
     end
 
     def self.weekend?(datetime)
@@ -40,7 +37,7 @@ module VehicleCodingPh
     private_class_method :coding?
 
     def self.allowed_anywhere
-      Response.new(false, [:anywhere])
+      Response.new(false, [:anywhere], [])
     end
     private_class_method :allowed_anywhere
 

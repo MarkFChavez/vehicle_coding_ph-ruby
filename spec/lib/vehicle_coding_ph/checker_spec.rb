@@ -10,7 +10,7 @@ module VehicleCodingPh
         before { Timecop.freeze("Dec 16, 2019 10:00:00") }
 
         it "is not allowed to drive" do
-          expected_areas = [
+          allowed = [
             "Marikina",
             "Muntinlupa",
             "Taguig",
@@ -18,10 +18,13 @@ module VehicleCodingPh
             "Paranaque",
           ]
 
+          not_allowed = AREA_TO_HOUR_MAPPING.keys - allowed
+
           response = described_class.(plate)
 
           expect(response.coding).to eq true
-          expect(response.allowed_areas).to eq expected_areas
+          expect(response.allowed).to eq allowed
+          expect(response.not_allowed).to eq not_allowed
         end
       end
 
@@ -32,7 +35,8 @@ module VehicleCodingPh
           response = described_class.(plate, tuesday) 
 
           expect(response.coding).to eq false
-          expect(response.allowed_areas).to eq [:anywhere]
+          expect(response.allowed).to eq [:anywhere]
+          expect(response.not_allowed).to eq []
         end
       end
 
@@ -43,7 +47,8 @@ module VehicleCodingPh
           response = described_class.(plate) 
 
           expect(response.coding).to eq false
-          expect(response.allowed_areas).to eq [:anywhere]
+          expect(response.allowed).to eq [:anywhere]
+          expect(response.not_allowed).to eq []
         end
       end
 
@@ -54,7 +59,8 @@ module VehicleCodingPh
           response = described_class.(plate) 
 
           expect(response.coding).to eq false
-          expect(response.allowed_areas).to eq [:anywhere]
+          expect(response.allowed).to eq [:anywhere]
+          expect(response.not_allowed).to eq []
         end
       end
 
@@ -65,7 +71,8 @@ module VehicleCodingPh
           response = described_class.(plate) 
 
           expect(response.coding).to eq false
-          expect(response.allowed_areas).to eq [:anywhere]
+          expect(response.allowed).to eq [:anywhere]
+          expect(response.not_allowed).to eq []
         end
       end
 
@@ -76,7 +83,8 @@ module VehicleCodingPh
           response = described_class.(plate) 
 
           expect(response.coding).to eq false
-          expect(response.allowed_areas).to eq [:anywhere]
+          expect(response.allowed).to eq [:anywhere]
+          expect(response.not_allowed).to eq []
         end
       end
 
@@ -87,7 +95,8 @@ module VehicleCodingPh
           response = described_class.(plate) 
 
           expect(response.coding).to eq false
-          expect(response.allowed_areas).to eq [:anywhere]
+          expect(response.allowed).to eq [:anywhere]
+          expect(response.not_allowed).to eq []
         end
       end
     end

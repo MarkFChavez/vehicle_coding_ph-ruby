@@ -1,11 +1,12 @@
 module VehicleCodingPh
   class Response
 
-    attr_reader :coding, :allowed_areas
+    attr_reader :coding, :allowed, :not_allowed
 
-    def initialize(coding, areas)
+    def initialize(coding, allowed, not_allowed)
       @coding = coding
-      @allowed_areas = areas
+      @allowed = allowed
+      @not_allowed = not_allowed
     end
 
   end
