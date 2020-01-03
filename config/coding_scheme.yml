@@ -1,0 +1,32 @@
+---
+- day: Monday
+  plates:
+    - "1"
+    - "2"
+
+- day: Tuesday
+  plates:
+    - "3"
+    - "4"
+
+- day: Wednesday
+  plates:
+    - "5"
+    - "6"
+
+- day: Thursday
+  plates:
+    - "7"
+    - "8"
+
+- day: Friday
+  plates:
+    - "9"
+    - "0"
+
+- day: Saturday
+  plates: []
+
+- day: Sunday
+  plates: []
+

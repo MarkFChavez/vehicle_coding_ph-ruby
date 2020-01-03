@@ -29,10 +29,10 @@ module VehicleCodingPh
       last_digit = plate[-1]
       day_today = Date::DAYNAMES[datetime.wday]
 
-      mapping = VehicleCodingPh::PLATE_TO_DAY_MAPPING.
-        select { |day, digits| day == day_today }
+      mapping = VehicleCodingPh.coding_scheme.
+        find { |mapping| mapping[:day] == day_today }
 
-      mapping[day_today].include?(last_digit)
+      mapping[:plates].include?(last_digit)
     end
     private_class_method :coding?
 

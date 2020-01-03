@@ -1,4 +1,5 @@
 require "date"
+require "yaml"
 require "active_support/core_ext/hash/indifferent_access"
 require "vehicle_coding_ph/version"
 require "vehicle_coding_ph/checker"
@@ -7,15 +8,10 @@ require "vehicle_coding_ph/response"
 module VehicleCodingPh
   class Error < StandardError; end
 
-  PLATE_TO_DAY_MAPPING = {
-    "Monday"    => ["1", "2"],
-    "Tuesday"   => ["3", "4"],
-    "Wednesday" => ["5", "6"],
-    "Thursday"  => ["7", "8"],
-    "Friday"    => ["9", "0"],
-    "Saturday"  => [],
-    "Sunday"    => [],
-  }
+  def self.coding_scheme
+    file = ["config", "coding_scheme.yml"].join("/")
+    YAML.load_file(file).map(&:with_indifferent_access)
+  end
 
   AREA_TO_HOUR_MAPPING = {
     "Marikina" => [],
