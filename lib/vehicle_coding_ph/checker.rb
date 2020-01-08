@@ -9,7 +9,10 @@ module VehicleCodingPh
       not_allowed_areas = []
       hour_of_the_day   = datetime.hour
 
-      VehicleCodingPh::AREA_TO_HOUR_MAPPING.each do |area, hours|
+      VehicleCodingPh.coding_hours_per_area.each do |hash|
+        area = hash[:area]
+        hours = hash[:hours]
+
         if hours.empty? || !hours.include?(hour_of_the_day)
           allowed_areas << area
         else

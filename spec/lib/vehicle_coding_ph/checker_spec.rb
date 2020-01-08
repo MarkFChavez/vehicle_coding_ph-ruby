@@ -18,7 +18,11 @@ module VehicleCodingPh
             "Paranaque",
           ]
 
-          not_allowed = AREA_TO_HOUR_MAPPING.keys - allowed
+          areas = ::VehicleCodingPh.coding_hours_per_area.map do |hash|
+            hash[:area]
+          end
+
+          not_allowed = areas - allowed
 
           response = described_class.(plate)
 
